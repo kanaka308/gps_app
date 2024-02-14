@@ -7,7 +7,7 @@ function main(){
         geolocation = window.navigator.geolocation
     }
     if(geolocation){
-        geolocation.watchPosition(onLocaationUpdate, onError, {
+        geolocation.watchPosition(onLocationUpdate, onError, {
             enableHighAccuracy: true,
             maximumAge: 1000
         })
@@ -16,11 +16,12 @@ function main(){
     }
 }
 
-function onLocaationUpdate(event){
+function onLocationUpdate(event){
     CURRENT_LOCATION = event.coords
     console.log(event);
     document.getElementById("loc").innerHTML = "Your Location <br/> <span class='locFont'> Lat: "+ CURRENT_LOCATION.latitude.toFixed(4)+"<br/>Lon: "+CURRENT_LOCATION.longitude.toFixed(4) +"</span>"
 }
+
 
 
 function onError(err){
