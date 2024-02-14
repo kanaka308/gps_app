@@ -19,11 +19,14 @@ function main(){
 function onLocaationUpdate(event){
     CURRENT_LOCATION = event.coords
     console.log(event);
-}
-function onError(err){
-    alert("Cannot access location: " + err)
     document.getElementById("loc").innerHTML = "Your Location <br/> <span class='locFont'> Lat: "+ CURRENT_LOCATION.latitude.toFixed(4)+"<br/>Lon: "+CURRENT_LOCATION.longitude.toFixed(4) +"</span>"
 }
+
+
+function onError(err){
+    alert("Cannot access location: " + err)
+}
+
 
 function setA(){
     A = CURRENT_LOCATION
